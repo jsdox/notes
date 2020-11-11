@@ -1,6 +1,6 @@
 <?php
 
-uses(Tests\TestCase::class);
+// uses(Tests\TestCase::class);
 
 
 beforeEach(function () {
@@ -26,3 +26,31 @@ test('asserts true is true', function () {
     echo get_class($this); 
     echo $this->hey;
 });
+
+test('assert empty', function() {
+    $array = [];
+    $this->assertEmpty($array);
+    $this->assertStringContainsString('Star', 'Star Wars');
+});
+
+test('expect true to be true', function () {
+    // assertion
+    $this->assertTrue(true);
+  
+    // expectation
+    expect(true)->toBe(true);
+  });
+
+  it('chain', function () {
+      $id = 14;
+      $name = 'Jatinder';
+    expect($id)->toBe(14)->and($name)->toBe('Jatinder');
+  });
+/*group test*/
+  it('has home', function () {
+    $this->assertTrue(true);
+})->group('integration');
+
+it('has home2', function () {
+    $this->assertTrue(true);
+})->group('integration');
