@@ -1,6 +1,6 @@
 steps:
   # build the container image
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker2'
   args: [
     'build', 
     '-t', 
@@ -8,7 +8,7 @@ steps:
     '.'
     ]
   # push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker2'
   args: ['push', 'gcr.io/$PROJECT_ID/${_CLOUD_RUN_SERVICE}']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
