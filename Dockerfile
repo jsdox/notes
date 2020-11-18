@@ -14,7 +14,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 RUN a2enmod rewrite
 
-
+EXPOSE 8080
 
 #Import the image with basic ubuntu system and php along with extensions installed.
 #FROM sandymadaan/php7.3-docker:0.4
