@@ -23,9 +23,6 @@ COPY .env.example .env
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install composer packages
-RUN composer update
-
 RUN apt-get update
 
 RUN apt-get install libzip-dev zip libicu-dev -y
