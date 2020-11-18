@@ -1,6 +1,6 @@
 FROM php:7.4.5-apache
 
-COPY . .
+COPY . /var/www/html/
 
 # Restart apache2
 RUN service apache2 restart
