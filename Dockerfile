@@ -17,11 +17,14 @@ RUN sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /e
 
 COPY .env.example .env
 
-ARG GOOGLE_CLOUD_PROJECT
+#ARG GOOGLE_CLOUD_PROJECT
 
-RUN sed -ri -e 's/project_id/${GOOGLE_CLOUD_PROJECT}/g' .env
+#RUN sed -ri -e 's/project_id/${GOOGLE_CLOUD_PROJECT}/g' .env
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install composer packages
+RUN composer install -n --prefer-dist
 
 RUN apt-get update
 
