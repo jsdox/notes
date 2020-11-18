@@ -2,6 +2,9 @@ FROM php:7.4.5-apache
 
 COPY . .
 
+# Restart apache2
+RUN service apache2 restart
+
 # Use the PORT environment variable in Apache configuration files.
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
@@ -34,8 +37,7 @@ EXPOSE 8080
 # Copy local code to the container image.
 #COPY . /var/www/html/
 
-# Restart apache2
-#RUN service apache2 restart
+
 
 
 
