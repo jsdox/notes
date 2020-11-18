@@ -21,10 +21,10 @@ COPY .env.example .env
 
 #RUN sed -ri -e 's/project_id/${GOOGLE_CLOUD_PROJECT}/g' .env
 
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install composer packages
-RUN composer install -n --prefer-dist
+#RUN composer install -n --prefer-dist
 
 RUN apt-get update
 
