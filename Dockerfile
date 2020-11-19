@@ -23,7 +23,7 @@ COPY .env.example .env
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer dump-autoload
+RUN composer update --no-scripts
 # Install composer packages
 #RUN composer install -n --prefer-dist
 
