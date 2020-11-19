@@ -46,7 +46,7 @@ RUN composer install -n --prefer-dist
 
 RUN chown -R www-data:www-data storage bootstrap
 RUN chmod -R 777 storage bootstrap
-
+RUN php artisan key:generate
 #Import the image with basic ubuntu system and php along with extensions installed.
 #FROM sandymadaan/php7.3-docker:0.4
 
